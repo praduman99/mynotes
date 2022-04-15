@@ -1,0 +1,39 @@
+.card-container{
+padding: 1rem;
+margin: 1rem;
+background-color: white;
+border-radius: .5rem;
+border-color: lightgrey;
+color: black;
+
+}
+.card-container:hover{
+    box-shadow: 0px 0px 15px white;
+    font-size: 1.2rem;
+}
+.text-size{
+    width: 50%;
+}
+.margin{
+    margin: 1rem;
+}
+
+.card-heading{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.date{
+    
+    color: lightgray;
+}
+
+.action-button{
+    padding: 0px 7px 0px 7px;
+    font-weight: 600;
+}
+
+.action-button:hover{
+font-weight: bold;
+}
+
