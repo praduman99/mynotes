@@ -1,0 +1,4 @@
+const noteActions =(action , payload)=>{
+    
+
+}
