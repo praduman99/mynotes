@@ -16,5 +16,6 @@ export const API = {
         archive_list: '/api/archives',
         restore_note: '/api/archives/restore/:noteId',
         delete: '/api/archives/delete/:noteId',
+        
     }
 }
