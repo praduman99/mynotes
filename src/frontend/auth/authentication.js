@@ -2,7 +2,7 @@ import React from 'react'
 
 const authentication = () => {
   return (
-    <div>authentication</div>
+    <div>Login / logout</div>
   )
 }
 
