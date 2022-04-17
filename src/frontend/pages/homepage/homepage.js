@@ -4,6 +4,7 @@ import '../../commonstyles/Globalstyles.css'
 import './style.css'
 import notes from '../../assets/img/note.png'
 import { Link, NavLink } from 'react-router-dom'
+import Authentication from '../../auth/authentication'
 const Homepage = (props) => {
     return (
 
@@ -30,13 +31,13 @@ const Homepage = (props) => {
                 </p>
 
                 <div className='flex-col margin-top'>
-                    <NavLink to='/dashboard'>
+                    <NavLink to='/auth' >
                 <button className='button'>
               start making notes
                 </button>
                 </NavLink>
                 
-                    {/* <p className='self-center'> Already have an account ?</p> */}
+                    <p className='self-center'> Already have an account ?</p>
                 </div>
             </div>
 

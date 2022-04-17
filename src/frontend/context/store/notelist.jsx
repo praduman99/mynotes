@@ -7,22 +7,33 @@ import {
 } from "react";
 import { API, Server_url } from "../../adapters/apis";
 import { getApiCall } from "../../adapters/callmethods";
- import { FiltersReducer } from "../reducers/filters";
+import { fetchArchiveNoteList, fetchNoteList } from "../actionCreators/noteActions";
+ import { FilterNotesList } from "../reducers/filters";
+import { noteActions } from "../reducers/notes";
+import { useAuth } from "./auth";
 
 const NotesListContext = createContext();
 
 const NoteListProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(FiltersReducer, {
+  const [state, dispatch] = useReducer(noteActions,{
     allNotes: [],
     deletedNotes:[],
     archiveNotes:[],
     sort: null,
   });
 
+  const {auth} =useAuth()
   useEffect(() => {
       let url=Server_url+API.notes.note_list
-      getApiCall(url , token)
-    //   .then(json=>dispatch({type : '' , payload : json.data}))
+      getApiCall(url , auth)
+      .then(json=>dispatch(fetchNoteList(json)))
+      
+
+
+      let url1=Server_url+API.archive_notes.archive_list
+      getApiCall(url1 , auth)
+      .then(json=>dispatch(fetchArchiveNoteList(json)))
+     
   }, []);
   return (
     <NotesListContext.Provider value={{ state, dispatch }}>
@@ -31,8 +42,8 @@ const NoteListProvider = ({ children }) => {
   );
 };
 
-const usenoteList = () => {
+const UsenoteList = () => {
   return useContext(NotesListContext);
 };
 
-export { NoteListProvider, usenoteList };
+export { NoteListProvider, UsenoteList };

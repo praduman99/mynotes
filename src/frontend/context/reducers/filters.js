@@ -46,4 +46,4 @@ const FilterNotesList = (state, data) => {
     localStorage.removeItem("token");
     setAuth(false);
   }
-export {FilterProducts,SortProducts,SearchProducts,handleLogout}
+export {FilterNotesList,SortProducts,SearchProducts,handleLogout}

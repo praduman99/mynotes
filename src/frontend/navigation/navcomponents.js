@@ -1,3 +1,4 @@
+import Authentication from "../auth/authentication";
 import Archive from "../pages/archivenotes/archive";
 import Dashboard from "../pages/dashboard/dashboard";
 import Edit from "../pages/editnotes/edit";
@@ -28,6 +29,11 @@ export const route = [
     {
         'component': <Archive />,
         'path': '/archive'
+
+    },
+    {
+        'component': <Authentication/>,
+        'path': '/auth'
 
     },
 ]
